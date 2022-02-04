@@ -1,0 +1,22 @@
+body {
+    font-family: sans-serif, 'Times New Roman', Times, serif;
+    background-color: rgb(97, 97, 97);
+}
+
+.eas {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-gap: 0px;
+    
+}
+
+.eas div{
+    height: 25px;
+    width: 25px;
+}
+
+.eas-center {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
