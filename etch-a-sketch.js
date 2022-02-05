@@ -8,6 +8,7 @@ function spawnGrid (number) {
     for (let i = 0; i < totalBoxes; i++) {
         let box = document.createElement('div');
         box.setAttribute(`id`, `${i}`);
+        box.classList.add('box');
         box.textContent = `${i}`;
         eas.appendChild(box);
     }
@@ -15,8 +16,18 @@ function spawnGrid (number) {
 
 spawnGrid(16);
 
-//array with all the grids divs
-const gridDivs = document.querySelector('.eas').children;
+document.addEventListener("mouseover", e => {
+    if (e.target.matches(".box")) {
+        console.log(e)
+    }
+})
 
-console.log(gridDivs);
-console.log(gridDivs[0]);
+
+
+
+//array with all the grids divs
+//commented out for the moment. found another way to mouseover
+//const gridDivs = document.querySelector('.eas').children;
+//console.log(gridDivs);
+//console.log(typeof gridDivs);
+//console.log(gridDivs[0]);
