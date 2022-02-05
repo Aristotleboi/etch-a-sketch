@@ -7,27 +7,38 @@ function spawnGrid (number) {
     totalBoxes = number * number;
     for (let i = 0; i < totalBoxes; i++) {
         let box = document.createElement('div');
-        box.setAttribute(`id`, `${i}`);
         box.classList.add('box');
-        box.textContent = `${i}`;
         eas.appendChild(box);
     }
 }
 
 spawnGrid(16);
 
-document.addEventListener("mouseover", e => {
-    if (e.target.matches(".box")) {
-        console.log(e)
-    }
-})
+//object with all the grids boxs
+const gridDivs = document.querySelector('.eas').children;
+
+
+for (var i = 0; i < gridDivs.length; i++) {
+    gridDivs[i].addEventListener('mouseover', e => {
+        let litBox = e.target;
+        litBox.style.backgroundColor = 'black';
+    });
+}
 
 
 
 
-//array with all the grids divs
-//commented out for the moment. found another way to mouseover
-//const gridDivs = document.querySelector('.eas').children;
-//console.log(gridDivs);
-//console.log(typeof gridDivs);
-//console.log(gridDivs[0]);
+
+//document.addEventListener("mouseover", e => {
+    //if (e.target.matches(".box")) {
+       // console.log(e.target)
+        //let litBox = e.target;
+       // litBox.setAttribute('id', 'litBox')
+       // eas.appendChild(litBox);
+       // console.log('hi');
+  //  }
+//})
+
+
+
+
